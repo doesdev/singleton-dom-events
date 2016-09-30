@@ -15,7 +15,7 @@ function evtOn (el, evt, cb, capture) {
 
 function evtOff (el, evt, cb, capture) {
   if (!el || !(el.removeEventListener || el.detachEvent)) return cb
-  evt = el.addEventListener ? evt : ('on' + evt)
+  evt = el.removeEventListener ? evt : ('on' + evt)
   var callee = (el.removeEventListener || el.detachEvent)
   callee.call(el, evt, cb, capture)
   return cb
