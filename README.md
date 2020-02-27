@@ -22,5 +22,6 @@ const setEvent = require('singleton-dom-events')
 let myCb = => console.log('yay')
 
 setEvent('window-resize', window, 'resize', myCb)
+setEvent.remove('window-resize')
 
 ```
