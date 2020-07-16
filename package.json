@@ -1,15 +1,10 @@
 {
   "name": "singleton-dom-events",
-  "version": "2.0.1",
+  "version": "1.1.0",
   "description": "One event to rule... err that one thing. Making scope complex DOM events safe since 2016",
   "main": "index.js",
-  "module": "module.mjs",
-  "files": [
-    "index.js",
-    "module.mjs"
-  ],
   "scripts": {
-    "build": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -25,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/doesdev/singleton-dom-events/issues"
   },
-  "homepage": "https://github.com/doesdev/singleton-dom-events#readme",
-  "devDependencies": {
-    "rollup": "^2.21.0"
-  }
+  "homepage": "https://github.com/doesdev/singleton-dom-events#readme"
 }
