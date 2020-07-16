@@ -24,7 +24,7 @@ function removeEvent (identifier) {
   return true
 }
 
-export function setEvent (identifier, el, evt, cb, capture) {
+function setEvent (identifier, el, evt, cb, capture) {
   capture = capture === true
   var crntEvt = { el: el, evt: evt, cb: cb }
   var event = evtManager[identifier] = evtManager[identifier] || crntEvt
@@ -35,3 +35,5 @@ export function setEvent (identifier, el, evt, cb, capture) {
 }
 
 setEvent.remove = removeEvent
+
+export default setEvent
