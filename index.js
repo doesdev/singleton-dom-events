@@ -21,18 +21,18 @@ function evtOff (el, evt, cb, capture) {
 }
 
 function removeEvent (identifier) {
-  var event = evtManager[identifier]
-  if (event) evtOff(event.el, event.evt, event.cb)
+  var evt = evtManager[identifier]
+  if (evt) evtOff(evt.el, evt.evt, evt.cb, evt.capture)
   return true
 }
 
 function setEvent (identifier, el, evt, cb, capture) {
   capture = capture === true
-  var crntEvt = { el: el, evt: evt, cb: cb }
-  var event = evtManager[identifier] = evtManager[identifier] || crntEvt
-  evtOff(event.el, event.evt, event.cb, capture)
-  event = evtManager[identifier] = crntEvt
-  evtOn(event.el, event.evt, event.cb, capture)
+  var crntEvt = { el: el, evt: evt, cb: cb, capture: capture }
+  var oldEvt = evtManager[identifier] = evtManager[identifier] || crntEvt
+  evtOff(oldEvt.el, oldEvt.evt, oldEvt.cb, capture)
+  var newEvt = evtManager[identifier] = crntEvt
+  evtOn(newEvt.el, newEvt.evt, newEvt.cb, capture)
   return cb
 }
 
